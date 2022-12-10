@@ -10,7 +10,6 @@ function App() {
 
     const [errorMessages, setErrorMessages] = useState({});
 
-    // User Login
     const database = [
         {
             username: "arun",
