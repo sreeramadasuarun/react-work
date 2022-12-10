@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../login/auth'
 import "./LoginCss.css";
@@ -10,7 +9,6 @@ function App() {
     const navigate = useNavigate()
 
     const [errorMessages, setErrorMessages] = useState({});
-    const [isSubmitted, setIsSubmitted] = useState(false);
 
     // User Login
     const database = [
@@ -40,7 +38,6 @@ function App() {
                 setErrorMessages({ name: "pass", message: errors.pass });
             } else {
 
-                setIsSubmitted(true);
                 login({ uname, pass });
                 navigate("/")
             }
@@ -55,7 +52,6 @@ function App() {
         name === errorMessages.name && (
             <div className="error">{errorMessages.message}</div>
         );
-
 
 
     return (
